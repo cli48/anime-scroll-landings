@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Potion Panic — Brew First, Panic Later</title>
+<meta name="description" content="Potion Panic: a chaotic magic-academy brewing game where one wrong pinch turns your cauldron into a glitter-bomb.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#12241a; --panel:#1e4d33; --accent:#7CFFB2; --accent2:#c86bff;
+    --text:#eafff2; --text-dim:#bfe8cf;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #1f6b45 0%, #123320 60%, #0a1f14 100%); }
+  .badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+
+  .storyboard{ position:relative; }
+  .sb-scene-wrap{ position:relative; height:180vh; }
+  .sb-scene{ position:sticky; top:0; height:100svh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .sb-scene img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+                 transform:scale(calc(1.06 - 0.06 * var(--scene-progress, 0))); transition:transform .05s linear; }
+  .sb-scene .scrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,36,26,.1), rgba(18,36,26,.85)); }
+  .sb-scene .copy{ position:relative; z-index:2; text-align:center; padding:0 6vw; max-width:760px;
+                    opacity:calc(0.15 + 0.85 * var(--scene-progress, 0));
+                    transform:translateY(calc(26px - 26px * var(--scene-progress, 0))); }
+  .sb-scene .copy .eyebrow{ justify-content:center; }
+  .sb-scene .copy h2{ font-size:clamp(1.9rem, 5vw, 3.4rem); margin-top:.4rem; }
+  .sb-scene .copy p{ color:var(--text-dim); margin-top:.8rem; font-size:1.08rem; }
+  @media (prefers-reduced-motion: reduce){ .sb-scene img{ transform:none; } .sb-scene .copy{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Potion <span>Panic</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">Cauldron's already bubbling</span>
+      <h1>Brew First.<br>Panic Later.</h1>
+      <p class="tagline">Potion Panic hands you a cauldron, a shaky ladle, and a recipe scroll that's definitely missing a step. Pinch fast, stir faster, and try not to paint the whole lab neon.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Start Brewing</a>
+        <a class="btn btn-ghost" href="#story">Watch a Meltdown</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>2.4M</b><span>potions brewed</span></div>
+        <div class="stat"><b>91%</b><span>explosions survived</span></div>
+        <div class="stat"><b>60</b><span>recipes unlocked</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="A stylized student alchemist with spiky hair mid-stir over a glowing cauldron, sparkles and magic rays bursting outward on a gradient green-violet background" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<div class="storyboard" id="story" data-scene-track>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-b.webp" alt="Flat-color anime-poster illustration of a lab bench crowded with glowing bottles and a bubbling green cauldron">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene one</span>
+        <h2>The scroll says "a pinch."</h2>
+        <p>Sure. A pinch of what, exactly? The recipe scroll is smudged, the cauldron is impatient, and your hand is already over the jar of something glowing.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-a.webp" alt="Bold anime-style illustration of a spiky-haired alchemist mid-pose, dodging a burst of magical energy with dynamic motion lines">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene two</span>
+        <h2>That was NOT a pinch.</h2>
+        <p>The cauldron hiccups, then roars. Violet sparks chase you around the bench while the potion decides whether to heal, transform, or simply detonate.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-c.webp" alt="Dynamic anime-poster art of a student alchemist caught in a glittering explosion of green and violet light rings">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene three</span>
+        <h2>Glitter-bomb. Somehow a win.</h2>
+        <p>The lab is coated in sparkle-residue, your eyebrows are gone, and the potion works perfectly. Chaos, it turns out, is a legitimate brewing technique.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="split" data-reveal data-parallax="0.06">
+    <img src="assets/img/panel-b.webp" alt="Stylized lab bench glowing with bottled ingredients and a swirling green cauldron" loading="lazy">
+    <div>
+      <span class="eyebrow">The brew</span>
+      <h2>Every ingredient has a mood.</h2>
+      <p>Stir clockwise for calm reagents, counter-clockwise to wake the feisty ones. Time your pinches to the cauldron's pulse and the whole batch turns out gorgeous instead of gruesome.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-c.webp" alt="Anime-style illustration of a student alchemist engulfed in a glittering violet and green explosion" loading="lazy">
+    <div>
+      <span class="eyebrow">The chaos meter</span>
+      <h2>Panic is a resource, not a failure.</h2>
+      <p>Every wrong pinch fills the Chaos Meter instead of ending your run. Max it out and you trigger a Glitter-Bomb — pure luck, wild rewards, and a lab that needs re-painting.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Meet the alchemists</span>
+    <h2>Three brewers. One very flammable lab.</h2>
+    <p>Pick a starter, unlock the rest by surviving their signature meltdown.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Spiky-haired alchemist mid-dodge with a burst of magical energy, flat anime-poster style" loading="lazy">
+      <span class="badge">Starter</span>
+      <h3>Nell Ashgrove</h3>
+      <p>Steady hands, steady nerves. Reads a cauldron's pulse before it even bubbles.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Glowing lab bench with bottled potions and a bubbling cauldron" loading="lazy">
+      <span class="badge">Unlock: Recipe 12</span>
+      <h3>Bram Wickel</h3>
+      <p>Ingredient hoarder. Keeps three backup pinches for every recipe, just in case.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Alchemist caught in a sparkling green and violet explosion" loading="lazy">
+      <span class="badge">Unlock: Recipe 34</span>
+      <h3>Sable Quill</h3>
+      <p>Glitter-Bomb specialist. Aims for chaos on purpose and somehow always wins.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">The cauldron is already bubbling</span>
+    <h2 id="cta">Pinch Wrong. Win Anyway.</h2>
+    <p>Free to brew, new recipes every week, glitter never optional.</p>
+    <a class="btn btn-primary" href="#cta">Start Brewing</a>
+  </div>
+</section>
+
+<footer>
+  Potion Panic is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

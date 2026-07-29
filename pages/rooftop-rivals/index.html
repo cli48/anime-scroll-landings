@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rooftop Rivals — Last Shot, City Watching</title>
+<meta name="description" content="Rooftop Rivals: a 1-on-1 street basketball game where every rooftop court hosts a rivalry that ends on a buzzer-beater.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#2a0e3a; --panel:#3a1550; --accent:#ff6a3c; --accent2:#7a3cff;
+    --text:#fff4ea; --text-dim:#dcc4e8;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #ff6a3c 0%, #a83c6e 55%, #2a0e3a 100%); }
+  .badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+
+  .storyboard{ position:relative; }
+  .sb-scene-wrap{ position:relative; height:180vh; }
+  .sb-scene{ position:sticky; top:0; height:100svh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .sb-scene img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+                 transform:scale(calc(1.06 - 0.06 * var(--scene-progress, 0))); transition:transform .05s linear; }
+  .sb-scene .scrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(42,14,58,.1), rgba(42,14,58,.8)); }
+  .sb-scene .copy{ position:relative; z-index:2; text-align:center; padding:0 6vw; max-width:760px;
+                    opacity:calc(0.15 + 0.85 * var(--scene-progress, 0));
+                    transform:translateY(calc(26px - 26px * var(--scene-progress, 0))); }
+  .sb-scene .copy .eyebrow{ justify-content:center; }
+  .sb-scene .copy h2{ font-size:clamp(1.9rem, 5vw, 3.4rem); margin-top:.4rem; }
+  .sb-scene .copy p{ color:var(--text-dim); margin-top:.8rem; font-size:1.08rem; }
+  @media (prefers-reduced-motion: reduce){ .sb-scene img{ transform:none; } .sb-scene .copy{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Rooftop <span>Rivals</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">One ball. One rooftop. No overtime.</span>
+      <h1>Last Shot.<br>City Watching.</h1>
+      <p class="tagline">Rooftop Rivals drops you into a sunset 1-on-1 where the court is twelve stories up and the only clock that matters is the one in your head. Call your shot, back down your rival, and put the city to bed.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Call Next</a>
+        <a class="btn btn-ghost" href="#story">Watch the Rivalry</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>212</b><span>buzzer-beaters</span></div>
+        <div class="stat"><b>26</b><span>rooftop courts</span></div>
+        <div class="stat"><b>9.4K</b><span>rivalries settled</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="A stylized street baller silhouetted against a burning orange and purple sunset, mid-jump-shot with the ball haloed in light" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<div class="storyboard" id="story" data-scene-track>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-b.webp" alt="Rooftop basketball court at dusk, sun sinking behind the skyline in orange and violet gradients">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene one</span>
+        <h2>The sun's going down. So is your rival.</h2>
+        <p>Twelve floors up, the net's still got chalk dust on it from the last challenger. Both of you step to the line as the sky catches fire.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-a.webp" alt="Two rival ballplayers locked in a mid-air duel, dynamic poses with speed lines and orange sparks">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene two</span>
+        <h2>Shot for shot. No mercy.</h2>
+        <p>Crossover, step-back, fadeaway — every bucket gets answered within seconds. The shot clock isn't the enemy. Blinking first is.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-c.webp" alt="A basketball arcing through a deep purple night sky above the city, trailing a glowing orange streak">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene three</span>
+        <h2>Buzzer. Arc. Silence.</h2>
+        <p>The ball leaves your hand before the horn even finishes sounding. The whole rooftop holds its breath until it drops.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="split" data-reveal data-parallax="0.06">
+    <img src="assets/img/panel-b.webp" alt="Sunset rooftop court glowing orange and violet with the city skyline behind it" loading="lazy">
+    <div>
+      <span class="eyebrow">The clock</span>
+      <h2>Every possession is a dare.</h2>
+      <p>The shot clock isn't fixed — it shrinks every time you score and stretches every time you get burned. Stay hot and you're playing on borrowed seconds. Stay cold and your rival gets bold.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-c.webp" alt="Basketball trailing an orange streak against a deep purple night sky" loading="lazy">
+    <div>
+      <span class="eyebrow">The reputation</span>
+      <h2>Beat a name, become one.</h2>
+      <p>Every rival you dethrone adds their signature move to your bag and their name to your rap sheet. Climb the rooftop ladder and the callouts get louder, the sunsets get redder, and the stakes stop being just bragging rights.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Meet the rivals</span>
+    <h2>Three ballers. One net.</h2>
+    <p>Pick your starter, unlock the rest by taking their rooftop.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Baller mid-crossover with orange energy sparks and speed lines" loading="lazy">
+      <span class="badge">Starter</span>
+      <h3>Kaito Ren</h3>
+      <p>Handles like silk. His crossover has ended more ankles than the concrete.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Rooftop court bathed in orange and violet sunset light" loading="lazy">
+      <span class="badge">Unlock: Court 8</span>
+      <h3>Nao Ibaraki</h3>
+      <p>Step-back queen. Creates her own space and never gives it back.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Basketball streaking through the purple night sky in a glowing arc" loading="lazy">
+      <span class="badge">Unlock: Court 20</span>
+      <h3>Ryo Fujimaru</h3>
+      <p>Buzzer specialist. Doesn't shoot until the horn is already ringing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">Ball's in your hands</span>
+    <h2 id="cta">Call Your Shot.</h2>
+    <p>Free to play, a new rival every Friday, no ads at the buzzer.</p>
+    <a class="btn btn-primary" href="#cta">Call Next</a>
+  </div>
+</section>
+
+<footer>
+  Rooftop Rivals is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

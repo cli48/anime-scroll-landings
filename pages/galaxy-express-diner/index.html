@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galaxy Express Diner — Milkshakes at Light Speed</title>
+<meta name="description" content="Galaxy Express Diner: a retro sci-fi diner car crossing the stars, slinging the best milkshakes this side of the asteroid belt.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#0a0e2e; --panel:#1c1250; --accent:#ffd23f; --accent2:#ff6ec7;
+    --text:#fff8ea; --text-dim:#c9c0e8;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #2c1a63 0%, #160b30 60%, #050515 100%); }
+  .badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+
+  .storyboard{ position:relative; }
+  .sb-scene-wrap{ position:relative; height:180vh; }
+  .sb-scene{ position:sticky; top:0; height:100svh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .sb-scene img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+                 transform:scale(calc(1.06 - 0.06 * var(--scene-progress, 0))); transition:transform .05s linear; }
+  .sb-scene .scrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,14,46,.1), rgba(10,14,46,.85)); }
+  .sb-scene .copy{ position:relative; z-index:2; text-align:center; padding:0 6vw; max-width:760px;
+                    opacity:calc(0.15 + 0.85 * var(--scene-progress, 0));
+                    transform:translateY(calc(26px - 26px * var(--scene-progress, 0))); }
+  .sb-scene .copy .eyebrow{ justify-content:center; }
+  .sb-scene .copy h2{ font-size:clamp(1.9rem, 5vw, 3.4rem); margin-top:.4rem; }
+  .sb-scene .copy p{ color:var(--text-dim); margin-top:.8rem; font-size:1.08rem; }
+  @media (prefers-reduced-motion: reduce){ .sb-scene img{ transform:none; } .sb-scene .copy{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Galaxy <span>Express</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">Now boarding at Platform Nebula-9</span>
+      <h1>Milkshakes.<br>Light Speed.</h1>
+      <p class="tagline">The Galaxy Express Diner rides the last car of a train that never stops, ladling shakes to every stray comet-rider, bounty hunter, and homesick moon-kid who slides into a booth. Buckle up. The syrup pumps don't do gentle.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Grab a Booth</a>
+        <a class="btn btn-ghost" href="#story">Watch the Rush</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>2.3M</b><span>shakes served</span></div>
+        <div class="stat"><b>84,000</b><span>light-years logged</span></div>
+        <div class="stat"><b>612</b><span>regulars aboard</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="A stylized alien diner crew member with spiky hair balancing a tray of glowing milkshakes against a neon-indigo starfield, sparkles and motion rays around them" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<div class="storyboard" id="story" data-scene-track>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-b.webp" alt="Diner car doors sliding open onto a field of glittering asteroids under a deep indigo sky">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene one</span>
+        <h2>Doors open on the belt.</h2>
+        <p>The Express shudders through the asteroid field and the diner doors hiss wide. Booths fill in seconds. Order tickets start spinning off the wheel.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-a.webp" alt="Alien short-order cook mid-leap slinging a milkshake with a burst of neon energy trailing behind them">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene two</span>
+        <h2>Meteor shower. Full tilt.</h2>
+        <p>Rocks ping the hull, the lights flicker pink, and the crew doesn't miss a pour. Every shake that lands steady during a shake adds double to the tab.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-c.webp" alt="Crew member celebrating with arms raised as the diner car erupts in swirling neon light rings and confetti sparkles">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene three</span>
+        <h2>Order nailed. Car erupts.</h2>
+        <p>Perfect ticket, zero spills, shake delivered exactly as the customer's eyes lit up. The whole car goes neon and every regular bangs their mug on the counter.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="split" data-reveal data-parallax="0.06">
+    <img src="assets/img/panel-b.webp" alt="The diner car interior glowing under indigo and pink neon as asteroids drift past the windows" loading="lazy">
+    <div>
+      <span class="eyebrow">The menu</span>
+      <h2>Forty-one flavors, none of them from Earth.</h2>
+      <p>Comet-mint, plasma cola, stardust caramel — every shake is mixed to order, and every regular has a secret modifier only the crew remembers. Get it wrong and they'll still tip, but they won't let you forget it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-c.webp" alt="A crew member dashing through the diner car surrounded by rings of pink and gold light" loading="lazy">
+    <div>
+      <span class="eyebrow">The route</span>
+      <h2>The train never stops. Neither do you.</h2>
+      <p>From Nebula-9 to the Rings of Ketch, the Express loops the spiral arm on a schedule nobody's ever seen written down. New stops mean new regulars, new rushes, and a whole new shift of chaos to survive.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Meet the crew</span>
+    <h2>Three cooks. One endless rush.</h2>
+    <p>Start behind the counter with a rookie, unlock the rest by clearing their busiest shift.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Rookie diner cook mid-leap with a milkshake and a burst of neon energy" loading="lazy">
+      <span class="badge">Starter</span>
+      <h3>Comet Kessa</h3>
+      <p>Fastest pour on the train. Never lets a ticket sit past ten seconds.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Diner car glowing with indigo and pink light against a starfield" loading="lazy">
+      <span class="badge">Unlock: Ketch Ring Shift</span>
+      <h3>Old Man Vryx</h3>
+      <p>Three-armed grill master. Cooks meteor storms and orders with the same calm.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Crew member dashing through swirling rings of neon light" loading="lazy">
+      <span class="badge">Unlock: Perfect Streak x20</span>
+      <h3>Nova Pip</h3>
+      <p>Reads a regular's order before they even sit down. Tips like it's a superpower.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">Booth's open, the belt's close</span>
+    <h2 id="cta">The Rush Never Ends.</h2>
+    <p>Free to ride, new route every Friday, shakes always full-size.</p>
+    <a class="btn btn-primary" href="#cta">Grab a Booth</a>
+  </div>
+</section>
+
+<footer>
+  Galaxy Express Diner is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

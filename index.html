@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anime Scroll Landings — 11 Worlds, One Wild Gallery</title>
+<meta name="description" content="Eleven anime-flavored scrollytelling landing pages, each its own mini-story. Bright, saturated, high-energy — scroll into any world.">
+<style>
+  :root{
+    --bg:#0d0718; --panel:#180f2c; --accent:#ff2f8f; --accent2:#3ff6ff; --accent3:#ffd23f;
+    --text:#fff6ff; --text-dim:#c7b3de;
+    --font:-apple-system,"Segoe UI","Hiragino Sans","Noto Sans",ui-sans-serif,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+  body{
+    margin:0; background:
+      radial-gradient(60% 50% at 12% -6%, rgba(255,47,143,.35), transparent 60%),
+      radial-gradient(55% 45% at 90% 0%, rgba(63,246,255,.28), transparent 60%),
+      radial-gradient(70% 60% at 50% 100%, rgba(255,210,63,.14), transparent 60%),
+      var(--bg);
+    color:var(--text); font-family:var(--font); overflow-x:hidden; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:1280px; margin:0 auto; padding:0 6vw}
+
+  header.top{ padding:6.5rem 6vw 3.5rem; text-align:center; position:relative; }
+  .kicker{ display:inline-flex; align-items:center; gap:.6em; font-weight:800; text-transform:uppercase;
+           letter-spacing:.16em; font-size:.8rem; color:var(--accent2); margin-bottom:1.2rem; }
+  .kicker::before, .kicker::after{ content:""; width:26px; height:3px; background:var(--accent); border-radius:3px; }
+  h1{ font-size:clamp(2.6rem, 7vw, 5rem); font-weight:900; letter-spacing:-.02em; line-height:1.02; margin:0; }
+  h1 span{ background:linear-gradient(92deg, var(--accent), var(--accent3) 45%, var(--accent2));
+           -webkit-background-clip:text; background-clip:text; color:transparent; }
+  header.top p{ max-width:52ch; margin:1.4rem auto 0; color:var(--text-dim); font-size:1.15rem; line-height:1.55; }
+  .legend{ display:flex; gap:1.6rem; justify-content:center; flex-wrap:wrap; margin-top:2.2rem; font-size:.85rem; color:var(--text-dim); }
+  .legend b{ color:var(--text); display:inline-flex; align-items:center; gap:.4em; }
+  .dot{ width:9px; height:9px; border-radius:50%; display:inline-block; }
+  .dot.gss{ background:var(--accent2); box-shadow:0 0 10px var(--accent2); }
+  .dot.sb{ background:var(--accent3); }
+
+  .grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1.8rem; padding:1rem 6vw 7rem; max-width:1280px; margin:0 auto; }
+  @media (max-width:1000px){ .grid{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .grid{ grid-template-columns:1fr;} }
+
+  .card{
+    position:relative; border-radius:24px; overflow:hidden; text-decoration:none; color:var(--text);
+    background:var(--panel); border:1px solid rgba(255,255,255,.08);
+    opacity:0; transform:translateY(28px); transition:opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease, border-color .25s ease;
+    display:flex; flex-direction:column;
+  }
+  .card.is-visible{ opacity:1; transform:none; }
+  .card:hover{ box-shadow:0 22px 50px -18px rgba(255,47,143,.5); border-color:rgba(255,255,255,.22); }
+  .card .thumb{ position:relative; aspect-ratio:3/2; overflow:hidden; }
+  .card .thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.2,.7,.2,1); }
+  .card:hover .thumb img{ transform:scale(1.06); }
+  .card .tag{
+    position:absolute; top:.8rem; left:.8rem; z-index:2; display:inline-flex; align-items:center; gap:.4em;
+    background:rgba(10,6,20,.72); backdrop-filter:blur(6px); padding:.35em .75em; border-radius:999px;
+    font-size:.68rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--accent2);
+  }
+  .card .tag.sb{ color:var(--accent3); }
+  .card .body{ padding:1.3rem 1.4rem 1.5rem; flex:1; display:flex; flex-direction:column; }
+  .card h3{ margin:0 0 .4rem; font-size:1.28rem; font-weight:900; letter-spacing:-.01em; }
+  .card p{ margin:0; color:var(--text-dim); font-size:.92rem; line-height:1.5; flex:1; }
+  .card .go{ margin-top:1rem; font-weight:800; font-size:.85rem; color:var(--accent); display:inline-flex; align-items:center; gap:.4em; }
+  .card:hover .go{ color:var(--accent2); }
+
+  footer{ padding:4rem 6vw 5rem; text-align:center; color:var(--text-dim); font-size:.88rem; }
+  footer b{ color:var(--text); }
+
+  @keyframes floaty{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-10px);} }
+  .kicker{ animation:floaty 5s ease-in-out infinite; }
+  @media (prefers-reduced-motion:reduce){ .kicker{ animation:none; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="kicker">11 Worlds · 1 Gallery</span>
+  <h1>Scroll Into <span>Anime.</span></h1>
+  <p>Eleven bright, loud, unapologetically anime landing pages. Every scene cuts, zooms, and powers up as you scroll — pick a world and ride it to the bottom.</p>
+  <div class="legend">
+    <b><span class="dot gss"></span> Scroll-scrubbed sequence</b>
+    <b><span class="dot sb"></span> Sticky storyboard + parallax</b>
+  </div>
+</header>
+
+<div class="grid" id="grid"></div>
+
+<footer>
+  Built as a fictional showcase gallery — <b>11 unique scrollytelling worlds</b>, all one anime brand. Every character, background, and keyframe on this site is generated art.
+</footer>
+
+<script src="assets/js/reveal.js"></script>
+<script>
+  var PAGES = [
+    { slug:'neon-ramen-rush', title:'Neon Ramen Rush', hook:'A cyberpunk night-market noodle brawler. Every slurp is a power-up.', gss:true },
+    { slug:'starlight-idol', title:'Starlight Idol', hook:'Center stage, full spotlight, zero hesitation.', gss:true },
+    { slug:'mecha-overdrive', title:'Mecha Overdrive', hook:'Suit up plate by plate, then push it past redline.', gss:true },
+    { slug:'sakura-sprint', title:'Sakura Sprint', hook:'Ninety seconds to homeroom. Vault, slide, don’t stop.', gss:false },
+    { slug:'potion-panic', title:'Potion Panic', hook:'One wrong pinch and the whole lab goes sparkly.', gss:false },
+    { slug:'skate-spirits', title:'Skate Spirits', hook:'Land a trick, summon a spirit, ride into dusk.', gss:false },
+    { slug:'galaxy-express-diner', title:'Galaxy Express Diner', hook:'Best milkshake this side of the asteroid belt.', gss:false },
+    { slug:'blossom-and-blade', title:'Blossom & Blade', hook:'One duel, one breath, one falling petal.', gss:false },
+    { slug:'arcade-ultra', title:'Arcade Ultra', hook:'Insert coin. Beat the ghost. Own the leaderboard.', gss:false },
+    { slug:'tidewalker-festival', title:'Tidewalker Festival', hook:'Fireworks over the tide, one summer night only.', gss:false },
+    { slug:'rooftop-rivals', title:'Rooftop Rivals', hook:'Sunset court, last shot, the whole city holds its breath.', gss:false },
+  ];
+  var grid = document.getElementById('grid');
+  PAGES.forEach(function(p, i){
+    var a = document.createElement('a');
+    a.className = 'card';
+    a.href = 'pages/' + p.slug + '/index.html';
+    a.setAttribute('data-reveal', 'scale');
+    a.setAttribute('data-reveal-delay', String((i % 3) * 90));
+    a.innerHTML =
+      '<div class="thumb">' +
+        '<img src="pages/' + p.slug + '/assets/img/thumb.webp" alt="' + p.title + ' key art" loading="lazy" width="900" height="600">' +
+        '<span class="tag ' + (p.gss ? '' : 'sb') + '">' + (p.gss ? 'Scroll-scrubbed' : 'Storyboard') + '</span>' +
+      '</div>' +
+      '<div class="body">' +
+        '<h3>' + p.title + '</h3>' +
+        '<p>' + p.hook + '</p>' +
+        '<span class="go">Enter world &rarr;</span>' +
+      '</div>';
+    grid.appendChild(a);
+  });
+</script>
+</body>
+</html>

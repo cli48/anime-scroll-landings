@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starlight Idol — Center Stage, Zero Hesitation</title>
+<meta name="description" content="Starlight Idol: a rhythm-debut app where every tap builds your spotlight. Center stage, full spotlight, zero hesitation.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#0c0620; --panel:#1c1040; --accent:#ffd23f; --accent2:#ff2fb0;
+    --text:#fff8e8; --text-dim:#d8c8ec;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #4a1fa0 0%, #1c0e40 60%, #08041a 100%); }
+  .badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Starlight <span>Idol</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">Debut season · Now casting</span>
+      <h1>Center Stage.<br>Zero Hesitation.</h1>
+      <p class="tagline">Starlight Idol turns every tap into a beat and every beat into spotlight. Train your idol, nail the drop, and hold 20,000 fans in the palm of your hand.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#debut">Start Your Debut</a>
+        <a class="btn btn-ghost" href="#watch">Watch a Live Set</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>60fps</b><span>rhythm engine</span></div>
+        <div class="stat"><b>310</b><span>debut tracks</span></div>
+        <div class="stat"><b>2.1M</b><span>fans online now</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="An idol mid-performance under a golden spotlight burst, arms raised" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<section class="section" id="watch">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Scroll to hit the drop</span>
+    <h2>Watch the spotlight build, beat by beat.</h2>
+    <p>Scroll drives the performance frame by frame — slow it down for the buildup, blow through it for the drop. Your pace, your show.</p>
+  </div>
+</section>
+
+<section class="gss-track" data-scene-track>
+  <div class="gss-sticky">
+    <canvas class="gss-canvas" hidden></canvas>
+    <img class="gss-poster" alt="Idol fully lit under a full golden spotlight burst with confetti sparkles" hidden>
+    <div class="gss-progress" aria-live="polite">0%</div>
+  </div>
+</section>
+
+<style>
+  .gss-track{ position:relative; height:360vh; }
+  .gss-sticky{ position:sticky; top:0; height:100svh; overflow:hidden; background:#08041a; }
+  .gss-canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .gss-poster{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .gss-progress{ position:absolute; left:50%; bottom:2.4rem; transform:translateX(-50%);
+                 font:800 .85rem/1 var(--font); letter-spacing:.08em; color:#fff; mix-blend-mode:difference; }
+  @media (prefers-reduced-motion: reduce){ .gss-track{ height:100svh; } .gss-progress{ display:none; } }
+</style>
+
+<section class="section">
+  <div class="split" data-reveal>
+    <img src="assets/img/panel-b.webp" alt="Concert stage with layered spotlight rays and musical emblem" loading="lazy">
+    <div>
+      <span class="eyebrow">Training</span>
+      <h2>Every rehearsal counts double.</h2>
+      <p>Build vocal power, stage presence, and stamina in short daily sessions. Miss a day and your idol still remembers the choreography — she just needs the crowd back.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-c.webp" alt="Idol mid-dash through rings of golden light" loading="lazy">
+    <div>
+      <span class="eyebrow">Live sets</span>
+      <h2>Real crowds. Real reactions.</h2>
+      <p>Every show is scored live by real fans in the room. Land the note-perfect run and the whole stadium chants your idol's name for the encore.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Debut lineup</span>
+    <h2>Three stages. One spotlight.</h2>
+    <p>Pick your opener, then climb the circuit.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Idol close-up mid power pose with impact burst" loading="lazy">
+      <span class="badge">Opener</span>
+      <h3>Nova Kisaki</h3>
+      <p>Belter. Her high note charges the whole crowd meter in one hit.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Stage rays and musical note emblem" loading="lazy">
+      <span class="badge">Unlock: Circuit 2</span>
+      <h3>Rin Amasawa</h3>
+      <p>Choreo specialist. Perfect footwork doubles her fan-growth rate.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Idol dashing forward through light rings" loading="lazy">
+      <span class="badge">Unlock: Circuit 5</span>
+      <h3>Coco Hoshino</h3>
+      <p>Wildcard. Random setlist, double rewards, triple the pressure.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">The stage is yours</span>
+    <h2 id="debut">The Stage Is Yours.</h2>
+    <p>Free debut pack, no ads during your set, new tracks drop every Friday.</p>
+    <a class="btn btn-primary" href="#debut">Start Your Debut</a>
+  </div>
+</section>
+
+<footer>
+  Starlight Idol is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script type="module">
+  import { initGSS } from './assets/js/scrubber.js';
+  var track = document.querySelector('.gss-track');
+  initGSS({
+    manifestUrl: 'assets/frames/manifest.json',
+    track: track,
+    canvas: track.querySelector('.gss-canvas'),
+    poster: track.querySelector('.gss-poster'),
+    progressEl: track.querySelector('.gss-progress'),
+  });
+</script>
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

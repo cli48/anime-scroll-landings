@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blossom & Blade — One Duel, One Breath</title>
+<meta name="description" content="Blossom & Blade: a one-on-one samurai dueling game set in a crimson autumn forest, decided by a single strike before one petal touches the ground.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#2b0a12; --panel:#3a0f1c; --accent:#ff3b4e; --accent2:#ffe3c2;
+    --text:#fff0ea; --text-dim:#e0b8ae;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #7a1224 0%, #3a0a14 60%, #12040a 100%); }
+  .badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+
+  .storyboard{ position:relative; }
+  .sb-scene-wrap{ position:relative; height:180vh; }
+  .sb-scene{ position:sticky; top:0; height:100svh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .sb-scene img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+                 transform:scale(calc(1.06 - 0.06 * var(--scene-progress, 0))); transition:transform .05s linear; }
+  .sb-scene .scrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(43,10,18,.1), rgba(43,10,18,.8)); }
+  .sb-scene .copy{ position:relative; z-index:2; text-align:center; padding:0 6vw; max-width:760px;
+                    opacity:calc(0.15 + 0.85 * var(--scene-progress, 0));
+                    transform:translateY(calc(26px - 26px * var(--scene-progress, 0))); }
+  .sb-scene .copy .eyebrow{ justify-content:center; }
+  .sb-scene .copy h2{ font-size:clamp(1.9rem, 5vw, 3.4rem); margin-top:.4rem; }
+  .sb-scene .copy p{ color:var(--text-dim); margin-top:.8rem; font-size:1.08rem; }
+  @media (prefers-reduced-motion: reduce){ .sb-scene img{ transform:none; } .sb-scene .copy{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Blossom <span>&amp; Blade</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">One petal, one verdict</span>
+      <h1>One Duel.<br>One Breath.</h1>
+      <p class="tagline">Blossom &amp; Blade drops you into a crimson autumn forest across from a stranger with a drawn blade. No health bars, no second rounds — the fight ends the instant one of you reads the other wrong.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Draw Your Blade</a>
+        <a class="btn btn-ghost" href="#story">Watch a Duel</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>1</b><span>strike per duel</span></div>
+        <div class="stat"><b>212k</b><span>perfect parries</span></div>
+        <div class="stat"><b>9</b><span>dojo lineages</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="A stylized samurai silhouette mid-draw beneath falling crimson leaves, dynamic pose against a gradient sky with light rays" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<div class="storyboard" id="story" data-scene-track>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-b.webp" alt="Two duelists standing off in a crimson autumn forest as petals drift between them">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene one</span>
+        <h2>The standoff begins.</h2>
+        <p>Ten paces apart, hands on hilts, breath held. Somewhere above, one petal has already let go of its branch.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-a.webp" alt="Swordsman mid-strike with a burst of motion lines and sparks">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene two</span>
+        <h2>One clash. No mercy.</h2>
+        <p>Read the shoulder, not the sword. Commit a heartbeat too early and the duel is already over.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-c.webp" alt="A lone duelist sheathing a blade as a single petal lands on the ground in golden light">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene three</span>
+        <h2>The petal touches down.</h2>
+        <p>By the time it reaches the dirt, it's already decided. Sheathe your blade and walk — or don't get up.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="split" data-reveal data-parallax="0.06">
+    <img src="assets/img/panel-b.webp" alt="Crimson forest clearing bathed in autumn light, framing the dueling ground" loading="lazy">
+    <div>
+      <span class="eyebrow">The parry</span>
+      <h2>One hit. One chance to read it right.</h2>
+      <p>Every duel ends on a single exchange. Watch the stance, not the steel — the game hides the real tell in a flinch, a footfall, a breath caught half a second too long. Guess the angle, land the parry, win the ground.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-a.webp" alt="Duelist mid-strike, sparks and motion lines trailing the blade" loading="lazy">
+    <div>
+      <span class="eyebrow">The dojo</span>
+      <h2>Every loss is a lesson, not a reset.</h2>
+      <p>Fall to a stranger's blade and their opening becomes a drill in your dojo. Train it, break it, then go looking for whoever beat you — this time you'll know exactly which shoulder to watch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Meet the blades</span>
+    <h2>Three duelists. One verdict each.</h2>
+    <p>Start with one lineage, earn the rest by standing over their old teachers.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Sharp-eyed swordsman silhouette mid-strike with a burst of red energy" loading="lazy">
+      <span class="badge">Starter</span>
+      <h3>Renji Kurogane</h3>
+      <p>Balanced stance, forgiving timing window — the blade every dojo starts you on.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Silhouetted figure standing still in a crimson forest clearing, gradient sky behind" loading="lazy">
+      <span class="badge">Unlock: 25 wins</span>
+      <h3>Sayuri Benihana</h3>
+      <p>Reads feints before they land. Punishes anyone who commits too early.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Duelist sheathing a glowing blade as light rays and a falling petal frame the moment" loading="lazy">
+      <span class="badge">Unlock: Flawless dojo</span>
+      <h3>Isao Tsubaki</h3>
+      <p>Fights on the petal's clock alone. Never draws twice in the same duel.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">The petal is already falling</span>
+    <h2 id="cta">Draw Before It Lands.</h2>
+    <p>Free to duel, new lineage every season, no health bars to hide behind.</p>
+    <a class="btn btn-primary" href="#cta">Draw Your Blade</a>
+  </div>
+</section>
+
+<footer>
+  Blossom &amp; Blade is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

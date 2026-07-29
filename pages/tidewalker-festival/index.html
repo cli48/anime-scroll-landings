@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidewalker Festival — One Night, Every Wave</title>
+<meta name="description" content="Tidewalker Festival: a summer beach-festival game where you catch the tide's rhythm, light the lanterns, and set the sky on fire — one special night only.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#062035; --panel:#0e3550; --accent:#ff8f6b; --accent2:#ffe08a;
+    --text:#eefbff; --text-dim:#a8d0dc;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #0d5a68 0%, #0a3550 60%, #031522 100%); }
+
+  .storyboard{ position:relative; }
+  .sb-scene-wrap{ position:relative; height:180vh; }
+  .sb-scene{ position:sticky; top:0; height:100svh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .sb-scene img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+                 transform:scale(calc(1.06 - 0.06 * var(--scene-progress, 0))); transition:transform .05s linear; }
+  .sb-scene .scrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,32,53,.1), rgba(6,32,53,.8)); }
+  .sb-scene .copy{ position:relative; z-index:2; text-align:center; padding:0 6vw; max-width:760px;
+                    opacity:calc(0.15 + 0.85 * var(--scene-progress, 0));
+                    transform:translateY(calc(26px - 26px * var(--scene-progress, 0))); }
+  .sb-scene .copy .eyebrow{ justify-content:center; }
+  .sb-scene .copy h2{ font-size:clamp(1.9rem, 5vw, 3.4rem); margin-top:.4rem; }
+  .sb-scene .copy p{ color:var(--text-dim); margin-top:.8rem; font-size:1.08rem; }
+  @media (prefers-reduced-motion: reduce){ .sb-scene img{ transform:none; } .sb-scene .copy{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Tidewalker <span>Festival</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">One night only, every summer</span>
+      <h1>One Tide.<br>Every Wave.</h1>
+      <p class="tagline">Tidewalker Festival drops you barefoot in the shallows as the sun goes down. Read the tide, light the lanterns, and time your run so the sky opens up right when the water does.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Join the Festival</a>
+        <a class="btn btn-ghost" href="#story">Watch the Night</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>1</b><span>night per summer</span></div>
+        <div class="stat"><b>3,200</b><span>lanterns lit</span></div>
+        <div class="stat"><b>612</b><span>fireworks launched</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="A festival-goer silhouette wading through glowing tide water at sunset, lanterns drifting overhead" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<div class="storyboard" id="story" data-scene-track>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-a.webp" alt="Silhouette wading into shallow tide water as the sun sets in a coral and teal sky">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene one</span>
+        <h2>The tide comes in with the dark.</h2>
+        <p>Sandals off, yukata sleeves tied back, and the water's already climbing past your ankles. The festival only opens once the sea says so.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-b.webp" alt="Figure catching the rhythm of the waves while lighting a floating lantern, gradient dusk sky">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene two</span>
+        <h2>Feel the pull. Light the paper.</h2>
+        <p>Every wave has a beat. Strike your match on the inhale and the lantern catches first try. Miss it, and the tide snuffs the flame for you.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-c.webp" alt="Fireworks bursting over the ocean in sync with breaking waves, silhouetted festival crowd below">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene three</span>
+        <h2>The sky breaks with the surf.</h2>
+        <p>Light enough lanterns and the fireworks sync to the waves themselves — every boom timed to the exact second the tide slaps the shore.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="split" data-reveal data-parallax="0.06">
+    <img src="assets/img/panel-a.webp" alt="Silhouette standing in glowing shallow water at dusk, coral sky above" loading="lazy">
+    <div>
+      <span class="eyebrow">The rhythm</span>
+      <h2>The tide keeps the beat. You keep up.</h2>
+      <p>No fixed countdown, no metronome — just the ocean's own push and pull. Learn a shoreline's pattern and you'll never lose your footing, even when the water climbs to your waist.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-b.webp" alt="Festival-goer lighting a paper lantern above the waves at twilight" loading="lazy">
+    <div>
+      <span class="eyebrow">The lanterns</span>
+      <h2>Every lantern you light is yours to keep.</h2>
+      <p>Collect wax, wicks, and rare tide-glass charms to customize your own lantern string. Rare colors only drift ashore on nights when the moon runs full.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Meet the tidewalkers</span>
+    <h2>Three friends. One shoreline.</h2>
+    <p>Pick a starter, unlock the rest by lighting their favorite stretch of beach.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Starter character wading into the shallows at sunset with dynamic pose" loading="lazy">
+      <span class="badge">Starter</span>
+      <h3>Nami Segawa</h3>
+      <p>Reads any tide in three waves flat. Never misses a lantern's first strike.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Lantern-lighting character with gradient dusk sky and sparkles" loading="lazy">
+      <span class="badge">Unlock: Northern Cove</span>
+      <h3>Kaito Umino</h3>
+      <p>Lantern savant. Doubles the glow radius of anything he lights.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Character silhouetted against fireworks bursting over the ocean" loading="lazy">
+      <span class="badge">Unlock: Firework Finale</span>
+      <h3>Rin Takashio</h3>
+      <p>Firework caller. Can pull the finale forward if the crowd's lanterns are bright enough.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">The tide won't wait twice</span>
+    <h2 id="cta">One Night. Don't Miss It.</h2>
+    <p>Free to walk the shore, new festival every summer, no ads under the fireworks.</p>
+    <a class="btn btn-primary" href="#cta">Join the Festival</a>
+  </div>
+</section>
+
+<footer>
+  Tidewalker Festival is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mecha Overdrive — Suit Up. Systems Hot.</title>
+<meta name="description" content="Mecha Overdrive: strap into a pilot-built mech and go loud. Suit up, systems hot, overdrive engaged.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#050a12; --panel:#0f2436; --accent:#3fd0ff; --accent2:#ff5a3c;
+    --text:#eafcff; --text-dim:#b8d4e0;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #123a58 0%, #0b1c2c 60%, #030608 100%); }
+  .badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent2) 18%, transparent); color:var(--accent2); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Mecha <span>Overdrive</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">Hangar bay 7 · Systems online</span>
+      <h1>Suit Up.<br>Systems Hot.</h1>
+      <p class="tagline">Mecha Overdrive puts you in the cockpit of a pilot-built war frame. Assemble your armor plate by plate, then push it past redline in five-minute skirmishes.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#launch">Launch Bay Access</a>
+        <a class="btn btn-ghost" href="#build">See a Build</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>1,024</b><span>frame parts</span></div>
+        <div class="stat"><b>5min</b><span>average skirmish</span></div>
+        <div class="stat"><b>98%</b><span>uptime, hangar 7</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="Pilot silhouette powering up inside a mech hangar with cyan energy rings" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<section class="section" id="build">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Scroll to assemble</span>
+    <h2>Armor locks in, plate by plate.</h2>
+    <p>Scroll controls the assembly sequence directly — pause mid-lock, rewind to the bare frame, or blow straight through to full overdrive.</p>
+  </div>
+</section>
+
+<section class="gss-track" data-scene-track>
+  <div class="gss-sticky">
+    <canvas class="gss-canvas" hidden></canvas>
+    <img class="gss-poster" alt="Fully armored pilot in overdrive with cyan energy rings at full radius" hidden>
+    <div class="gss-progress" aria-live="polite">0%</div>
+  </div>
+</section>
+
+<style>
+  .gss-track{ position:relative; height:360vh; }
+  .gss-sticky{ position:sticky; top:0; height:100svh; overflow:hidden; background:#030608; }
+  .gss-canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .gss-poster{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .gss-progress{ position:absolute; left:50%; bottom:2.4rem; transform:translateX(-50%);
+                 font:800 .85rem/1 var(--font); letter-spacing:.08em; color:#fff; mix-blend-mode:difference; }
+  @media (prefers-reduced-motion: reduce){ .gss-track{ height:100svh; } .gss-progress{ display:none; } }
+</style>
+
+<section class="section">
+  <div class="split" data-reveal>
+    <img src="assets/img/panel-b.webp" alt="Hangar bay with gear emblems and cyan rays" loading="lazy">
+    <div>
+      <span class="eyebrow">The build</span>
+      <h2>Your frame, your rules.</h2>
+      <p>Swap thrusters, armor weight, and weapon mounts between every skirmish. A light frame turns faster. A heavy frame just doesn't fall down.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-c.webp" alt="Pilot dashing through cyan energy rings" loading="lazy">
+    <div>
+      <span class="eyebrow">Overdrive</span>
+      <h2>Push past redline.</h2>
+      <p>Hold overdrive for twelve seconds and every system redlines together — speed, armor, and weapons all spike at once. Time it wrong and you're venting steam for the next ten.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Hangar roster</span>
+    <h2>Three frames. One bay.</h2>
+    <p>Start light, then earn the heavier builds.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Pilot close-up mid power-up with impact burst" loading="lazy">
+      <span class="badge">Starter</span>
+      <h3>Frame Zero</h3>
+      <p>Balanced build. Forgiving overdrive window for new pilots.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Hangar bay with gear emblem" loading="lazy">
+      <span class="badge">Unlock: Bay 3</span>
+      <h3>Vantage-9</h3>
+      <p>Speed build. Half the armor, double the dash distance.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Pilot dashing through energy rings" loading="lazy">
+      <span class="badge">Unlock: Bay 6</span>
+      <h3>Ironclad Type-R</h3>
+      <p>Tank build. Slow to spin up, nearly impossible to bring down.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">Systems hot</span>
+    <h2 id="launch">Systems Hot. Bay Open.</h2>
+    <p>Free starter frame, no pay-to-win parts, new hangar drops every Friday.</p>
+    <a class="btn btn-primary" href="#launch">Launch Bay Access</a>
+  </div>
+</section>
+
+<footer>
+  Mecha Overdrive is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script type="module">
+  import { initGSS } from './assets/js/scrubber.js';
+  var track = document.querySelector('.gss-track');
+  initGSS({
+    manifestUrl: 'assets/frames/manifest.json',
+    track: track,
+    canvas: track.querySelector('.gss-canvas'),
+    poster: track.querySelector('.gss-poster'),
+    progressEl: track.querySelector('.gss-progress'),
+  });
+</script>
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

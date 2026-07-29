@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arcade Ultra — Insert Coin, Own the Board</title>
+<meta name="description" content="Arcade Ultra: a neon cabinet showdown where every coin drop is a shot at the top of the leaderboard.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#1a0b3a; --panel:#2a1250; --accent:#ff2fd0; --accent2:#3fffe0;
+    --text:#f3ecff; --text-dim:#c6b8e8;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #3a0e6b 0%, #1a0b3a 60%, #08041a 100%); }
+  .badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+
+  .storyboard{ position:relative; }
+  .sb-scene-wrap{ position:relative; height:180vh; }
+  .sb-scene{ position:sticky; top:0; height:100svh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .sb-scene img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+                 transform:scale(calc(1.06 - 0.06 * var(--scene-progress, 0))); transition:transform .05s linear; }
+  .sb-scene .scrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(26,11,58,.1), rgba(26,11,58,.85)); }
+  .sb-scene .copy{ position:relative; z-index:2; text-align:center; padding:0 6vw; max-width:760px;
+                    opacity:calc(0.15 + 0.85 * var(--scene-progress, 0));
+                    transform:translateY(calc(26px - 26px * var(--scene-progress, 0))); }
+  .sb-scene .copy .eyebrow{ justify-content:center; }
+  .sb-scene .copy h2{ font-size:clamp(1.9rem, 5vw, 3.4rem); margin-top:.4rem; }
+  .sb-scene .copy p{ color:var(--text-dim); margin-top:.8rem; font-size:1.08rem; }
+  @media (prefers-reduced-motion: reduce){ .sb-scene img{ transform:none; } .sb-scene .copy{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Arcade <span>Ultra</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">One coin. One shot. Zero mercy.</span>
+      <h1>Insert Coin.<br>Own the Board.</h1>
+      <p class="tagline">Arcade Ultra drops you into a cabinet lit up like a neon riot. Chain your combos, outrun the ghost of the last champion, and carve your initials where everyone can see them.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Drop a Coin</a>
+        <a class="btn btn-ghost" href="#story">Watch a Run</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>212K</b><span>high scores set</span></div>
+        <div class="stat"><b>77</b><span>cabinets online</span></div>
+        <div class="stat"><b>930K</b><span>ghost replays beaten</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="A spiky-haired player character mid-combo before a glowing arcade cabinet, magenta and cyan light rays bursting behind them" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<div class="storyboard" id="story" data-scene-track>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-a.webp" alt="Glowing arcade cabinet with a coin slot lit in cyan, magenta sparks flying as a coin drops in">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene one</span>
+        <h2>The coin drops. The screen wakes up.</h2>
+        <p>One clink of metal and the cabinet floods with light. No continues, no mercy — just you, the stick, and a scoreboard waiting to be rewritten.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-b.webp" alt="Stylized character silhouette in a dynamic fighting pose surrounded by stacking multiplier numbers and neon streaks">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene two</span>
+        <h2>Combo's stacking. Don't blink.</h2>
+        <p>Every clean hit ticks the multiplier up. Every miss resets it to zero. Somewhere behind you, a ghost is chasing your exact pace from last week.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-c.webp" alt="Character with spiky hair thrown back in triumph as the screen explodes into golden light and confetti-like pixel bursts, new high score text glowing">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene three</span>
+        <h2>NEW HIGH SCORE.</h2>
+        <p>The whole cabinet flashes gold. Type your three initials while the crowd behind you is already lining up their own coin.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="split" data-reveal data-parallax="0.06">
+    <img src="assets/img/panel-b.webp" alt="Player silhouette mid-combo with stacking multiplier numbers glowing in cyan and magenta" loading="lazy">
+    <div>
+      <span class="eyebrow">The multiplier</span>
+      <h2>Every combo you land stacks the score.</h2>
+      <p>Five hits, ten hits, thirty — the multiplier keeps climbing as long as you keep the streak alive. Drop it once and you're back to square one, watching the number reset in real time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-c.webp" alt="Character celebrating a new high score as the arcade screen bursts into gold light" loading="lazy">
+    <div>
+      <span class="eyebrow">The rival</span>
+      <h2>Your ghost never lets up.</h2>
+      <p>Every run you finish gets saved as a translucent rival for the next player — including you. Beat your own ghost and it respawns faster, sharper, hungrier for the rematch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Meet the roster</span>
+    <h2>Three players. One high score.</h2>
+    <p>Pick a starter, unlock the rest by topping their cabinet.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Starter character with spiky hair standing before a glowing coin slot, ready stance" loading="lazy">
+      <span class="badge">Starter</span>
+      <h3>Kiku Ren</h3>
+      <p>Balanced all-rounder. Never drops a combo below three hits.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Character mid-combo surrounded by stacking multiplier numbers" loading="lazy">
+      <span class="badge">Unlock: 50K score</span>
+      <h3>Vex Kurotani</h3>
+      <p>Multiplier maniac. Turns a ten-hit streak into a forty-hit avalanche.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Character triumphant as the screen bursts into gold light and pixel confetti" loading="lazy">
+      <span class="badge">Unlock: Beat a ghost</span>
+      <h3>Nova Ashida</h3>
+      <p>Ghost hunter. Reads a rival's replay and always finds the extra half-second.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">The board is open</span>
+    <h2 id="cta">Your Initials Go Here.</h2>
+    <p>Free to play, new cabinet skins every week, no ads between runs.</p>
+    <a class="btn btn-primary" href="#cta">Drop a Coin</a>
+  </div>
+</section>
+
+<footer>
+  Arcade Ultra is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

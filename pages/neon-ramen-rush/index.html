@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Ramen Rush — Slurp Loud. Hit Harder.</title>
+<meta name="description" content="Neon Ramen Rush: a cyberpunk night-market cooking battler. Every bowl you slurp powers you up. Play free tonight.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#150726; --panel:#211036; --accent:#ff2f8f; --accent2:#3ff6ff;
+    --text:#fff3fb; --text-dim:#d9b8e8;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #4a1470 0%, #1c0a30 60%, #0d0518 100%); }
+  .gss-sticky{ background:#0d0518; }
+  .rival-badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent2) 18%, transparent); color:var(--accent2); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Neon <span>Ramen</span> Rush</a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">Out now · Neon Night Market</span>
+      <h1>Slurp Loud.<br>Hit Harder.</h1>
+      <p class="tagline">One bowl, full power. Cook up broth, dodge rival chefs, and battle down the wildest alley in the city — where every slurp charges your next combo.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#play">Play Free Tonight</a>
+        <a class="btn btn-ghost" href="#trailer">Watch the Trailer</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>4.2M</b><span>bowls served</span></div>
+        <div class="stat"><b>128</b><span>rival chefs</span></div>
+        <div class="stat"><b>9.4/10</b><span>slurp rating</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="A neon-lit hero chef powering up over a glowing bowl of ramen, cyberpunk night market rays behind them" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<section class="section" id="trailer">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Scroll to power up</span>
+    <h2>Every slurp is a power-up.</h2>
+    <p>Scroll slow, scroll fast — the transformation follows your pace exactly, frame by frame, like flipping through the hottest panel in the night market.</p>
+  </div>
+</section>
+
+<section class="gss-track" data-scene-track>
+  <div class="gss-sticky">
+    <canvas class="gss-canvas" hidden></canvas>
+    <img class="gss-poster" alt="Chef standing triumphant in a golden power-up burst over a glowing ramen bowl" hidden>
+    <div class="gss-progress" aria-live="polite">0%</div>
+  </div>
+</section>
+
+<style>
+  .gss-track{ position:relative; height:360vh; }
+  .gss-sticky{ position:sticky; top:0; height:100svh; overflow:hidden; }
+  .gss-canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .gss-poster{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .gss-progress{ position:absolute; left:50%; bottom:2.4rem; transform:translateX(-50%);
+                 font:800 .85rem/1 var(--font); letter-spacing:.08em; color:#fff; mix-blend-mode:difference; }
+  @media (prefers-reduced-motion: reduce){ .gss-track{ height:100svh; } .gss-progress{ display:none; } }
+</style>
+
+<section class="section">
+  <div class="split" data-reveal>
+    <img src="assets/img/panel-b.webp" alt="Neon night-market alley lined with glowing emblem signs" loading="lazy">
+    <div>
+      <span class="eyebrow">The kitchen</span>
+      <h2>The bowl is the battlefield.</h2>
+      <p>Toss in chili oil, charred scallion, three-minute egg — every ingredient changes your combo tree. Undercook it and you're slow. Nail the broth and you're unstoppable for the next 30 seconds.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-c.webp" alt="Rival chef dashing through neon rings of energy" loading="lazy">
+    <div>
+      <span class="eyebrow">The rivals</span>
+      <h2>They want your recipe.</h2>
+      <p>Every district boss guards a secret broth. Beat them, steal the recipe, unlock their special move. Lose, and they steal yours instead — recipes move fast in this city.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Meet the roster</span>
+    <h2>Three chefs. One night market.</h2>
+    <p>Pick a starter, then unlock the rest by winning their turf.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Close-up hero chef mid power-up, impact burst behind them" loading="lazy">
+      <span class="rival-badge">Starter</span>
+      <h3>Mai "Firebowl" Chen</h3>
+      <p>Rushdown build. Every slurp shortens her next special by half a second.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Neon alley with three glowing chef emblems" loading="lazy">
+      <span class="rival-badge">Unlock: District 2</span>
+      <h3>Rook "Coldbroth" Ito</h3>
+      <p>Defensive tank. Freezes the pot mid-fight to stall rivals out.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="A chef dashing forward with a trail of energy rings" loading="lazy">
+      <span class="rival-badge">Unlock: District 5</span>
+      <h3>Suki "Ghost Pepper" Nara</h3>
+      <p>Glass cannon. One perfect bowl and the whole screen goes red.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">Bowl's getting cold</span>
+    <h2 id="play">Your Bowl Is Getting Cold.</h2>
+    <p>Free to play, no ads mid-battle, new district drops every Friday night.</p>
+    <a class="btn btn-primary" href="#play">Play Free Tonight</a>
+  </div>
+</section>
+
+<footer>
+  Neon Ramen Rush is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script type="module">
+  import { initGSS } from './assets/js/scrubber.js';
+  var track = document.querySelector('.gss-track');
+  initGSS({
+    manifestUrl: 'assets/frames/manifest.json',
+    track: track,
+    canvas: track.querySelector('.gss-canvas'),
+    poster: track.querySelector('.gss-poster'),
+    progressEl: track.querySelector('.gss-progress'),
+  });
+</script>
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>

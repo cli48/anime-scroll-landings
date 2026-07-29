@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sakura Sprint — Late Bell, Full Speed</title>
+<meta name="description" content="Sakura Sprint: a rooftop-to-homeroom running game where every late bell becomes a full-speed petal chase.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root{
+    --bg:#3a1220; --panel:#4a1a2c; --accent:#ff5c8a; --accent2:#3fd6b8;
+    --text:#fff3f6; --text-dim:#f0c9d6;
+  }
+  .hero{ background: radial-gradient(120% 90% at 50% 0%, #ffb3cf 0%, #ff7aa8 55%, #7bd8c7 100%); }
+  .hero, .hero h1, .hero .eyebrow{ color:#3a1220; }
+  .hero .tagline{ color:#5a2b3a; }
+  .badge{ display:inline-block; padding:.3em .8em; border-radius:999px; background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent); font-weight:800; font-size:.75rem; letter-spacing:.06em; margin-bottom:.6rem; }
+
+  .storyboard{ position:relative; }
+  .sb-scene-wrap{ position:relative; height:180vh; }
+  .sb-scene{ position:sticky; top:0; height:100svh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .sb-scene img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+                 transform:scale(calc(1.06 - 0.06 * var(--scene-progress, 0))); transition:transform .05s linear; }
+  .sb-scene .scrim{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(58,18,32,.1), rgba(58,18,32,.8)); }
+  .sb-scene .copy{ position:relative; z-index:2; text-align:center; padding:0 6vw; max-width:760px;
+                    opacity:calc(0.15 + 0.85 * var(--scene-progress, 0));
+                    transform:translateY(calc(26px - 26px * var(--scene-progress, 0))); }
+  .sb-scene .copy .eyebrow{ justify-content:center; }
+  .sb-scene .copy h2{ font-size:clamp(1.9rem, 5vw, 3.4rem); margin-top:.4rem; }
+  .sb-scene .copy p{ color:var(--text-dim); margin-top:.8rem; font-size:1.08rem; }
+  @media (prefers-reduced-motion: reduce){ .sb-scene img{ transform:none; } .sb-scene .copy{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" data-scroll-bar></div>
+<nav class="nav" data-nav>
+  <a class="brand" href="index.html">Sakura <span>Sprint</span></a>
+  <a class="home-link" href="../../index.html">&larr; All worlds</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div data-reveal="left">
+      <span class="eyebrow">First bell in 90 seconds</span>
+      <h1>Late Bell.<br>Full Speed.</h1>
+      <p class="tagline">Sakura Sprint drops you on the rooftop with ninety seconds to homeroom. Vault the railings, ride the petal gusts, and don't you dare let the bell beat you.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#cta">Start the Sprint</a>
+        <a class="btn btn-ghost" href="#story">See a Run</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>90s</b><span>per run</span></div>
+        <div class="stat"><b>40</b><span>rooftop routes</span></div>
+        <div class="stat"><b>1.8M</b><span>bells beaten</span></div>
+      </div>
+    </div>
+    <div class="hero-art floaty" data-reveal="right" data-reveal-delay="150">
+      <img src="assets/img/hero.webp" alt="A student sprinting across a sakura-lined rooftop, petals swirling" width="1600" height="1000">
+    </div>
+  </div>
+</header>
+
+<div class="storyboard" id="story" data-scene-track>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-b.webp" alt="Rooftop courtyard with cherry blossoms and pink gradient sky">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene one</span>
+        <h2>The bell just rang.</h2>
+        <p>Bag on one shoulder, toast in your mouth, and homeroom is four buildings away. Time to move.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-a.webp" alt="Student leaping mid-air with a burst of energy">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene two</span>
+        <h2>Vault. Slide. Don't stop.</h2>
+        <p>Every railing you clear adds a half-second to your combo timer. Every stumble costs you three.</p>
+      </div>
+    </div>
+  </div>
+  <div class="sb-scene-wrap">
+    <div class="sb-scene">
+      <img src="assets/img/panel-c.webp" alt="Student dashing through a swirl of petals and light rings">
+      <div class="scrim"></div>
+      <div class="copy">
+        <span class="eyebrow">Scene three</span>
+        <h2>Petal gust — full sprint.</h2>
+        <p>Catch the wind at the right angle and it carries you the last hundred meters. Landing is optional. Style isn't.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="split" data-reveal data-parallax="0.06">
+    <img src="assets/img/panel-b.webp" alt="Rooftop courtyard bathed in cherry-blossom pink" loading="lazy">
+    <div>
+      <span class="eyebrow">The route</span>
+      <h2>Every rooftop remembers your best time.</h2>
+      <p>Forty hand-built routes, each with three shortcuts only the fastest students ever find. Beat your own ghost before you race anyone else's.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="split rev" data-reveal>
+    <img src="assets/img/panel-c.webp" alt="Student dashing through petals and rings of light" loading="lazy">
+    <div>
+      <span class="eyebrow">The combo</span>
+      <h2>Style keeps your streak alive.</h2>
+      <p>A clean vault, a wall-run, a petal-catch mid-air — chain three in a row and the whole screen shifts into golden hour for the rest of the run.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">Meet the sprinters</span>
+    <h2>Three students. One bell.</h2>
+    <p>Pick a starter, unlock the rest by topping their rooftop.</p>
+  </div>
+  <div class="panel-grid">
+    <div class="panel" data-reveal data-reveal-delay="0">
+      <img src="assets/img/panel-a.webp" alt="Sprinter mid-leap with energy burst" loading="lazy">
+      <span class="badge">Starter</span>
+      <h3>Yuzu Aoi</h3>
+      <p>All-rounder. Never loses more than half a second to a stumble.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="80">
+      <img src="assets/img/panel-b.webp" alt="Rooftop with cherry blossoms" loading="lazy">
+      <span class="badge">Unlock: Route 8</span>
+      <h3>Haru Kondo</h3>
+      <p>Wall-run specialist. Turns dead ends into shortcuts.</p>
+    </div>
+    <div class="panel" data-reveal data-reveal-delay="160">
+      <img src="assets/img/panel-c.webp" alt="Sprinter dashing through light rings" loading="lazy">
+      <span class="badge">Unlock: Route 20</span>
+      <h3>Momo Sato</h3>
+      <p>Petal-gust reader. Rides the wind nobody else even notices.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div data-reveal="scale">
+    <span class="eyebrow" style="justify-content:center">Ninety seconds left</span>
+    <h2 id="cta">The Bell Isn't Waiting.</h2>
+    <p>Free to sprint, new rooftop every Friday, no ads mid-run.</p>
+    <a class="btn btn-primary" href="#cta">Start the Sprint</a>
+  </div>
+</section>
+
+<footer>
+  Sakura Sprint is a fictional showcase page. Part of the <a href="../../index.html">anime scrollytelling gallery</a>.
+</footer>
+
+<script src="assets/js/reveal.js"></script>
+</body>
+</html>
